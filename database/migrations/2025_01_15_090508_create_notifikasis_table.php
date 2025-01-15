@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('id_peminjaman')->constrained('peminjaman')->onDelete('cascade');
             $table->text('pesan');
             $table->enum('tipe', ['due_reminder', 'overdue_notice', 'denda_notice']);
-            $table->tinyint('is_read');
+            $table->boolean('is_read')->default(0);
             $table->timestamps();
         });
     }
