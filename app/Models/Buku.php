@@ -18,8 +18,6 @@ class Buku extends Model
         'status',
         'jumlah_denda',
         'is_denda_dibayar',
-        'createdat',
-        '',
-        '',
+        'createdAt',
     ];
 }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('id_buku')->constrained('bukus')->onDelete('cascade');
             $table->decimal('rating',2,1);
             $table->text('komentar');
-            $table->string('url_foto');
+            $table->string('url_foto')->nullable();
             $table->timestamps();
         });
     }

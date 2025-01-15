@@ -15,11 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('judul');
             $table->string('penulis');
-            $table->string('isbn');
+            $table->string('isbn')->nullable();
             $table->enum('kategori',['fiksi','non-fiksi','sains','tekhnologi','sejarah','sastra','komik','lainya']);
-          
-            $table->text('deskripsi');
-            $table->string('cover_img');
+            $table->text('deskripsi')->nullable();
+            $table->string('cover_img')->nullable();
             $table->integer('stock');
             $table->decimal('denda_harian',10,2);
             $table->string('penerbit');

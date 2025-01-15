@@ -19,6 +19,6 @@ class Peminjaman extends Model
         'denda_harian',
         'penerbit',
         'tahun_terbit',
-        'createadat'
+        'createadAt'
     ];
 }

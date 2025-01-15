@@ -15,7 +15,7 @@ class Rating extends Model
         'rating',
         'komentar',
         'url_foto',
-        'createdat'
+        'createdAt'
     ];
 
 }

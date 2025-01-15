@@ -12,6 +12,6 @@ class Bookmark extends Model
         'id',
         'id_user',
         'id_buku',
-        'createdat'
+        'createdAt'
     ];
 }

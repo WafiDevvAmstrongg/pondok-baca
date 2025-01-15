@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('notifikasis', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_user')->constrained('users')->onDelete('cascade');
-            $table->foreignId('id_peminjaman')->constrained('')->onDelete('cascade');
-            $table->text('message');
-            $table->text('tipe');
-            $table->tinyint('isread');
+            $table->foreignId('id_peminjaman')->constrained('peminjaman')->onDelete('cascade');
+            $table->text('pesan');
+            $table->enum('tipe', ['due_reminder', 'overdue_notice', 'denda_notice']);
+            $table->tinyint('is_read');
             $table->timestamps();
         });
     }
