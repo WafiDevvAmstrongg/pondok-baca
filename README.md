@@ -17,7 +17,7 @@
 
 ## Tech Stack
 <p>
-  <img src="https://skillicons.dev/icons?i=mysql,laravel,tailwind&perline=7" />
+  <img src="https://skillicons.dev/icons?i=mysql,laravel,redis,tailwind&perline=7" />
 </p>
 
 
