@@ -22,7 +22,7 @@
                 <ul class="mt-4 space-y-2">
                     <li><a href="#" class="text-gray-600 hover:text-gray-900">Discord</a></li>
                     <li><a href="#" class="text-gray-600 hover:text-gray-900">Twitter</a></li>
-                    <li><a href="#" class="text-gray-600 hover:text-gray-900">Instagram</a></li>
+                    <li><a href="https://www.instagram.com/uddnnn__" target="_blank" class="text-gray-600 hover:text-gray-900">Instagram</a></li>
                     <li><a href="#" class="text-gray-600 hover:text-gray-900">Blog</a></li>
                 </ul>
             </div>
