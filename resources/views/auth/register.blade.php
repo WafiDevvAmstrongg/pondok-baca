@@ -1,87 +1,83 @@
-@extends('layouts.app')
+<div id="registerModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-lg shadow-lg w-full max-w-md p-6 relative">
+        <!-- Close Button -->
+        <button 
+            class="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
+            onclick="toggleRegisterModal()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Register</div>
+        <!-- Modal Content -->
+        <h2 class="text-2xl font-bold text-center text-emerald-600 mb-4">Register</h2>
+        <form method="POST" action="{{ route('register') }}">
+            @csrf
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="form-group row mb-3">
-                            <label class="col-md-4 col-form-label text-md-right">Name</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control @error('name') is-invalid @enderror" 
-                                    name="name" value="{{ old('name') }}" required autofocus>
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-3">
-                            <label class="col-md-4 col-form-label text-md-right">Email</label>
-                            <div class="col-md-6">
-                                <input type="email" class="form-control @error('email') is-invalid @enderror" 
-                                    name="email" value="{{ old('email') }}" required>
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-3">
-                            <label class="col-md-4 col-form-label text-md-right">Username</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control @error('username') is-invalid @enderror" 
-                                    name="username" value="{{ old('username') }}" required>
-                                @error('username')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-3">
-                            <label class="col-md-4 col-form-label text-md-right">Password</label>
-                            <div class="col-md-6">
-                                <input type="password" class="form-control @error('password') is-invalid @enderror" 
-                                    name="password" required>
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-3">
-                            <label class="col-md-4 col-form-label text-md-right">Confirm Password</label>
-                            <div class="col-md-6">
-                                <input type="password" class="form-control" 
-                                    name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Register
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+            <!-- Name -->
+            <div class="mb-4">
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                <input id="name" type="text" name="name" value="{{ old('name') }}" 
+                       class="w-full px-4 py-2 border rounded-lg focus:ring-emerald-500 focus:border-emerald-500 
+                              @error('name') border-red-500 @enderror" required autofocus>
+                @error('name')
+                    <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                @enderror
             </div>
-        </div>
+
+            <!-- Email -->
+            <div class="mb-4">
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                <input id="email" type="email" name="email" value="{{ old('email') }}" 
+                       class="w-full px-4 py-2 border rounded-lg focus:ring-emerald-500 focus:border-emerald-500 
+                              @error('email') border-red-500 @enderror" required>
+                @error('email')
+                    <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+
+            {{-- Username --}}
+            <div class="mb-4">
+                <label for="username" class="block text-sm font-medium text-gray-700 mb-2">Username</label>
+                <input id="username" type="text" name="username" value="{{ old('username') }}" 
+                       class="w-full px-4 py-2 border rounded-lg focus:ring-emerald-500 focus:border-emerald-500 
+                              @error('username') border-red-500 @enderror" required>
+                @error('username')
+                    <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <!-- Password -->
+            <div class="mb-4">
+                <label for="reg-password" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                <input id="reg-password" type="password" name="password" 
+                       class="w-full px-4 py-2 border rounded-lg focus:ring-emerald-500 focus:border-emerald-500 
+                              @error('password') border-red-500 @enderror" required>
+                @error('password')
+                    <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="mb-6">
+                <label for="password_confirmation" class="block text-sm font-medium text-gray-700 mb-2">Confirm Password</label>
+                <input id="password_confirmation" type="password" name="password_confirmation" 
+                       class="w-full px-4 py-2 border rounded-lg focus:ring-emerald-500 focus:border-emerald-500" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" 
+                    class="w-full bg-emerald-600 text-white py-2 px-4 rounded-lg hover:bg-emerald-700 focus:ring-2 focus:ring-emerald-500 mb-4">
+                Register
+            </button>
+
+            <!-- Login Link -->
+            <p class="text-center text-sm text-gray-600">
+                Already have an account? 
+                <button type="button" onclick="switchToLogin()" class="text-emerald-600 hover:text-emerald-700 font-medium">
+                    Sign in
+                </button>
+            </p>
+        </form>
     </div>
 </div>
-@endsection
