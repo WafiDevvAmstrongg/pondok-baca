@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PetugasController;
 use App\Http\Controllers\RegisterController;
 
 /*
@@ -21,6 +23,6 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::get('/login', [AuthController::class, 'loginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-
-
+Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
+Route::get('/petugas',[PetugasController::class, 'index'])->name('petugas.index');
 Route::get('/', [HomeController::class, 'index'])->name('home');
