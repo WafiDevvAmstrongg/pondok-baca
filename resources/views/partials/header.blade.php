@@ -91,8 +91,4 @@
             </div>
         </div>
     </div>
-
-    <!-- Include Login Modal -->
-    @include('auth.login')
-    @include('auth.register')
 </header>
