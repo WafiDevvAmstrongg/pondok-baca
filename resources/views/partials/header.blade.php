@@ -92,3 +92,5 @@
         </div>
     </div>
 </header>
+
+@include('auth.auth_modal')
