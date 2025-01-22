@@ -62,7 +62,22 @@
                     </div>
                 </form>
             </div>
-        </div>
+
+            <!-- Submit Button -->
+            <div>
+                <button type="submit"
+                    class="w-full bg-emerald-600 text-white py-2 px-4 rounded-lg hover:bg-emerald-700 focus:ring-2 focus:ring-emerald-500">
+                    Login
+                </button>
+            </div>
+        </form>
+        <p class="text-center text-sm text-gray-600 mt-4">
+            Don't have an account?
+            <button type="button" onclick="switchToRegister()"
+                class="text-emerald-600 hover:text-emerald-700 font-medium">
+                Sign up
+            </button>
+        </p>
     </div>
 </body>
 </html>
