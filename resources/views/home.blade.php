@@ -11,6 +11,9 @@
                 <button class="bg-emerald-600 text-white px-6 py-3 rounded-xl hover:bg-emerald-700">
                     Jelajahi Sekarang
                 </button>
+                <a href="{{ route('dashboard') }}" class="bg-emerald-600 text-white px-6 py-3 rounded-xl hover:bg-emerald-700 ml-2">
+                    Pergi ke Dashboard
+                </a>
             </div>
             <div class="hidden lg:block">
                 <img src="{{asset('img/hero.png')}}" alt="Hero" class="h-60 w-60 object-cover rounded-xl">
@@ -81,24 +84,6 @@
                 <div class="flex justify-between items-center mt-4">
                     <span class="text-sm text-gray-600">Stok Buku</span>
                     <span class="text-sm text-gray-600">988</span>
-                </div>
-            </div>
-        </div>
-        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
-            <div class="relative aspect-square">
-                <img src="{{asset('img/buku4.jpg')}}" alt="Karya" class="absolute inset-0 w-full h-full object-cover">
-            </div>
-            <div class="p-4">
-                <div class="flex items-center gap-2 mb-1">
-                    <div class="flex">
-                        <img src="{{asset('img/author.jpeg')}}" alt="Author" class="h-6 w-6 rounded-full ring-2 ring-white">
-                    </div>
-                    <span class="text-sm text-gray-600">by Wafi Udin</span>
-                </div>
-                <h3 class="font-semibold text-lg mb-1">Fenomena Shalawat Wahidiyah</h3>
-                <div class="flex justify-between items-center mt-4">
-                    <span class="text-sm text-gray-600">Stok Buku</span>
-                    <span class="text-sm text-gray-600">780</span>
                 </div>
             </div>
         </div>

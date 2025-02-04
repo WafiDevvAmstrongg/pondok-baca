@@ -13,12 +13,12 @@
                 <div class="inner">
                   <h3>1.500</h3>
 
-                  <p>Jumlah Buku</p>
+                  <p>Jumlah & Data Buku</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-bag"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href={{route('buku.index')}} class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
