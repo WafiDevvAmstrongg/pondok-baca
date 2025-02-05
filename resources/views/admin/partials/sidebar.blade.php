@@ -52,6 +52,13 @@
             <p>Riwayat</p>
           </a>
         </li>
+        <li class="nav-item">
+          <a href="{{ route('genre.index') }}" class="nav-link">
+            <i class="nav-icon fas fa-clock"></i>
+            <p>Genre</p>
+          </a>
+        </li>
+      </ul>
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

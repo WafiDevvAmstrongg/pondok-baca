@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GenreController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\PetugasController;
@@ -32,8 +33,15 @@ Route::get('/petugas',[PetugasController::class, 'index'])->name('petugas.index'
 Route::get('/buku',[BukuController::class, 'index'])->name('buku.index');
 Route::get('/peminjaman', [PeminjamanController::class, 'index'])->name('peminjaman.index');
 Route::get('/riwayat',[RiwayatController::class,'index'])->name('riwayat.index');
-
+Route::get('/genre',[GenreController::class,'index'])->name('genre.index');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::get('/profile', function () {
+    return view('profile', [
+        'user' => auth()->user()
+    ]);
+})->name('profile');
+
 
 Route::get('/home', function () {return redirect('/');})->name('home');
 
