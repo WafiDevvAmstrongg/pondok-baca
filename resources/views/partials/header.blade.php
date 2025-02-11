@@ -51,7 +51,7 @@
 
                             <!-- Menu Items -->
                             <div class="py-1">
-                                <a href="#" class="group flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50">
+                                <a href={{route('profile.show')}} class="group flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50">
                                     <svg class="mr-3 h-5 w-5 text-gray-400 group-hover:text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                     </svg>

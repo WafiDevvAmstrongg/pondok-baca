@@ -19,7 +19,10 @@
 <body>
     @include('partials.header')
     <!-- Main Content -->
-    @yield('content')
+    <div class="bg-gray-100">
+        @yield('content')
+    </div>
+
     @include('partials.footer')
 
     <script>
@@ -63,6 +66,7 @@
                 toggleRegisterModal();
             }
         });
+
         function toggleDropdown() {
             const dropdown = document.getElementById('profileDropdown');
             dropdown.classList.toggle('hidden');

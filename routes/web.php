@@ -9,6 +9,7 @@ use App\Http\Controllers\GenreController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\PetugasController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Models\Peminjaman;
 
@@ -35,12 +36,15 @@ Route::get('/peminjaman', [PeminjamanController::class, 'index'])->name('peminja
 Route::get('/riwayat',[RiwayatController::class,'index'])->name('riwayat.index');
 Route::get('/genre',[GenreController::class,'index'])->name('genre.index');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/buku/{id}', [BukuController::class, 'show'])->name('buku.show');
 
-Route::get('/profile', function () {
-    return view('profile', [
-        'user' => auth()->user()
-    ]);
-})->name('profile');
+
+    Route::middleware(['auth'])->group(function () {
+    Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+
+});
 
 
 Route::get('/home', function () {return redirect('/');})->name('home');
