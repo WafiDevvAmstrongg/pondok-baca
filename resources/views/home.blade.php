@@ -13,7 +13,7 @@
                         Jelajahi Sekarang
                     </button>
                     @auth
-                        @if (auth()->user()->role === 'admin' || auth()->user()->role === 'petugas')
+                        @if (auth()->user()->role === 'admin' || auth()->user()->role === 'admin')
                             <a href="{{ route('dashboard') }}"
                                 class="bg-emerald-600 text-white px-6 py-3 rounded-xl hover:bg-emerald-700">
                                 Pergi ke Dashboard
@@ -24,11 +24,7 @@
                                 Kembali ke Beranda
                             </a>
                         @endif
-                    @else
-                        <a href="{{ route('login') }}"
-                            class="bg-blue-500 text-white px-6 py-3 rounded-xl hover:bg-blue-600">
-                            Login untuk Masuk
-                        </a>
+                  
                     @endauth
                 </div>
                 <div class="hidden lg:block">
@@ -75,7 +71,7 @@
                 'book1': {
                     title: 'Panduan Sex Dalam Islam',
                     description: 'Buku ini membahas panduan seks dalam Islam berdasarkan hadits dan Al-Quran.',
-                    author: 'Wafi Udin',
+                    author: 'Ajizhh Bakrie',
                     year: '2023',
                     pages: '250',
                     stock: '107',

@@ -13,10 +13,7 @@ class AuthController extends Controller
     /**
      * Menampilkan form registrasi
      */
-    public function registerForm()
-    {
-        return view('auth.register');
-    }
+
 
     /**
      * Menangani proses registrasi
@@ -47,11 +44,6 @@ class AuthController extends Controller
         return redirect()->route('home')->with('success', 'Registrasi berhasil!');
     }
 
-    public function loginForm() 
-    {
-        return view('auth.login');
-    }
-
     public function login(Request $request) 
     {
         $credentials = $request->validate([
@@ -62,7 +54,7 @@ class AuthController extends Controller
             $request->session()->regenerate();
             return redirect()->intended('/');
         }
-
+        dd($request);
         return back()->withErrors([
             'username' => 'Username atau password salah!',
         ])->onlyInput('username');
