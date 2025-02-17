@@ -35,6 +35,12 @@
           </a>
         </li>
         <li class="nav-item">
+          <a href="{{ route('user.index') }}" class="nav-link">
+            <i class="nav-icon fas fa-user"></i>
+            <p>User</p>
+          </a>
+        </li>
+        <li class="nav-item">
           <a href="{{ route('buku.index') }}" class="nav-link">
             <i class="nav-icon fas fa-book"></i>
             <p>Data Buku</p>
@@ -52,12 +58,7 @@
             <p>Riwayat</p>
           </a>
         </li>
-        <li class="nav-item">
-          <a href="{{ route('genre.index') }}" class="nav-link">
-            <i class="nav-icon fas fa-clock"></i>
-            <p>Genre</p>
-          </a>
-        </li>
+        
       </ul>
       </ul>
     </nav>

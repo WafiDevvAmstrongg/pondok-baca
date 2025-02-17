@@ -9,23 +9,19 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
-        Schema::create('bukus', function (Blueprint $table) {
-            $table->id();
-            $table->string('judul');
-            $table->string('penulis');
-            $table->string('isbn')->nullable();
-            $table->enum('kategori',['fiksi','non-fiksi','sains','tekhnologi','sejarah','sastra','komik','lainya']);
-            $table->text('deskripsi')->nullable();
-            $table->string('cover_img')->nullable();
-            $table->integer('stock');
-            $table->decimal('denda_harian',10,2);
-            $table->string('penerbit');
-            $table->year('tahun_terbit');
-            $table->timestamps();
-        });
-    }
+   public function up()
+{
+    Schema::create('buku', function (Blueprint $table) {
+        $table->id();
+        $table->string('title');
+        $table->string('author');
+        $table->string('publisher');
+        $table->string('category');
+        $table->integer('year');
+        $table->string('photo')->nullable();
+        $table->timestamps();
+    });
+}
 
     /**
      * Reverse the migrations.

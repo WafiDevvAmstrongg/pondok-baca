@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GenreController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\PetugasController;
@@ -35,6 +36,9 @@ Route::get('/riwayat',[RiwayatController::class,'index'])->name('riwayat.index')
 Route::get('/genre',[GenreController::class,'index'])->name('genre.index');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/buku/{id}', [BukuController::class, 'show'])->name('buku.show');
+Route::resource('/users', UserController::class);
+Route::get('/user', [UserController::class, 'index'])->name('user.index');
+Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
 
 
     Route::middleware(['auth'])->group(function () {
